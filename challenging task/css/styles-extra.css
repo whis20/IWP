@@ -1,0 +1,83 @@
+body 
+{
+  font-size: 18px;
+  background-color: #ececd1;
+  
+}
+
+#header-nav 
+{
+  background-color:   #f76f51  ;
+  min-height: 50px;
+}
+
+.navbar-brand h1 
+{
+  font-family: 'Merienda One', cursive;
+  font-size: 2.0em;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus 
+{
+  text-decoration: none;
+}
+
+.navbar-light .navbar-toggler:focus,.navbar-light .navbar-toggler:hover
+{
+  background-color: white;
+}
+
+#nav-list a 
+{
+  background:  #f2c36a ;
+  color:black;
+  border: 1px solid #6f44a0;
+  font-weight: bold;
+}
+
+#nav-list a:hover 
+{
+  background: white;
+  
+}
+
+#page-title 
+{
+  font-weight: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Rokkitt', serif;   
+      font-size: 40px;
+}
+
+#main-content {
+    width: 92%;
+    margin-bottom: 30px;
+}
+
+#main-content h2 {
+    font-size: 2.9em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#main-content h3 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+#chicken-title, #beef-title, #sushi-title {
+    width: 100%;
+    padding: 20px;
+    background-color: #80bad1 ;
+    margin-bottom: 60px;
+    box-shadow: 5px 5px 50px black;
+}

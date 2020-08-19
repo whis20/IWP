@@ -1,0 +1,104 @@
+body 
+{
+  font-size: 18px;
+  background-color: #80bad1;
+  
+}
+
+#header-nav 
+{
+  background-color:   #f76f51  ;
+  min-height: 50px;
+}
+
+.navbar-brand h1 
+{
+  font-family: 'Merienda One', cursive;
+  font-size: 2.0em;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.navbar-brand a:hover, .navbar-brand a:focus 
+{
+  text-decoration: none;
+}
+
+.navbar-light .navbar-toggler:focus,.navbar-light .navbar-toggler:hover
+{
+  background-color: white;
+}
+
+#nav-list a 
+{
+  background:  #f2c36a ;
+  color:black;
+  border: 1px solid #6f44a0;
+  font-weight: bold;
+}
+
+#nav-list a:hover 
+{
+  background: white;
+  opacity: 0.8;
+}
+
+/**main content**/
+
+#page-title 
+{
+  font-weight: bold;
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Rokkitt', serif;   
+      font-size: 55px;
+}
+
+
+#main-text 
+{
+  height:800px;
+  padding: 40px;
+  background-color: #ececd1;
+  box-shadow: 5px 5px 50px black;
+  margin-right: 5px;
+  margin-left: 5px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+form {
+  border: 1px solid #c6c7cc;
+  border-radius: 5px;
+  margin: auto;
+  padding: 20px;
+  font: 18px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: auto;
+}
+
+#buttons
+{
+  position: relative;
+}
+#reset
+{
+  position: absolute;
+  right: 0;
+}
