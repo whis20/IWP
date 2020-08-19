@@ -7,48 +7,95 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fs.css">
     <title>FORM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet">
 
     <script >
         function welcome()
         {
-            alert("Successfully loaded !");
+            document.getElementById('date-input').value = new Date().toISOString().substring(0, 10);
         }
-        function goodbye()
+        /*function goodbye()
         {
             alert("Goodbye user !");
-        }
-        function uppercas() 
+        }*/
+        /*function uppercas()
         {
             var x = document.getElementById("regno");
             x.value = x.value.toUpperCase();
-        }
-        function focusFunction() {
+        }*/
+        // function focusFunction() {
 
-            document.getElementById("fname").style.background = "yellow";
-        }
-        function emailchange(val) 
+        //     document.getElementById("fname").style.background = "yellow";
+        // }
+        function emailchange(val)
         {
             alert("The input value in email field has changed. The new value is: " + val);
         }
-        function submitted() 
+        function onfoc()
+        {
+          var password = document.forms["form"]["password"];
+          if (password.value == ""){
+            var pass = '';
+            var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+            for (i = 1; i <= 8; i++) {
+              var char = Math.floor(Math.random()* str.length + 1);
+              pass += str.charAt(char);
+            }
+            window.alert("Suggested password "+pass);
+          }
+        }
+        function submitted()
         {
             alert("The form is successfully submitted");
         }
-        function bigImg(x) 
+        function leftempty()
         {
-          x.style.height = "200px";
-          x.style.width = "250px";
+          var fname =document.getElementById("fname");
+          var lname = document.getElementById("lname");
+          if (fname.value == ""){
+            alert("Please enter your name");
+            return false;
+          }
+          if (lname.value == ""){
+            window.alert("Please enter your last name.");
+            name.focus();
+            return false;
+          }
+          var lang= new Array();
+          var chk=document.getElementById('gridCheck1');
+          if(chk.checked)
+          {
+            lang.push(chk.value);
+          }
+          var chk=document.getElementById('gridCheck2');
+          if(chk.checked)
+          {
+            lang.push(chk.value);
+          }
+          var chk=document.getElementById('gridCheck3');
+          if(chk.checked)
+          {
+            lang.push(chk.value);
+          }
+          var chk=document.getElementById('gridCheck4');
+          if(chk.checked)
+          {
+            lang.push(chk.value);
+          }
+          if(Array.isArray(lang) && lang.length)
+          {
+            submitted();
+          }
+          else {
+            alert('Select a language also!!');
+            return false;
+          }
         }
-        function normalImg(x) 
-        {
-            x.style.height = "100px";
-            x.style.width = "150px";
-        }
-    </script>  
+
+    </script>
 </head>
 
 <body onload="welcome()" onunload="goodbye()" >
@@ -57,7 +104,7 @@
             <div class="container-fluid">
                 <div class="navbar-brand">
                     <a href="index.html" >
-                        <h1>Class Activity</h1>
+                        <h1>Challenging Task</h1>
                     </a>
                 </div>
 
@@ -65,7 +112,7 @@
                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul id="nav-list" class="navbar-nav mr-auto d-lg-none d-md-none">
                         <li class="nav-item active">
@@ -86,18 +133,18 @@
     <div id="main-content" class="container">
         <h2 id="page-title" class="text-center">Form</h2>
         <div id="main-text">
-          <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" >
-            <form action="" onsubmit="submitted()">
+          <!-- <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" > -->
+            <form name="form" action="" onsubmit="leftempty()">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">
                         Name
                     </label>
                     <div class="form-group row col-sm-10 ">
                         <div class="col-sm-6 required">
-                            <input type="text" class="form-control" id="fname" onfocus="focusFunction()"placeholder="First name"  required>
+                            <input type="text" class="form-control" name="fname" id="fname" onfocus="focusFunction()"placeholder="First name"  >
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Last name">
+                            <input type="text" class="form-control" placeholder="Last name" ID="lname">
                         </div>
                         *Important fields when in focus get highlighted.
                     </div>
@@ -118,15 +165,15 @@
               <div class="form-group row">
                   <label for="example-date-input" class="col-2 col-form-label">Date</label>
                   <div class="col-10">
-                    <input class="form-control" type="date" value="22-12-2016" id="date-input">
+                    <input class="form-control" type="date" value="<?php echo date('Y-m-d'); ?>" id="date-input">
                 </div>
             </div>
-                <!-- <div class="form-group row">
-                    <label for="password" class="col-sm-3 col-form-label">Password</label>
+                <div class="form-group row">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-9">
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" id="password" onclick="onfoc()" class="form-control" placeholder="Password">
                     </div>
-                </div> -->
+                </div>
                 <fieldset class="form-group">
                     <div class="row">
                       <legend class="col-form-label col-sm-2 pt-0">Branch</legend>
@@ -175,7 +222,7 @@
         <div class="col-sm-6">
           <button type="submit" class="btn btn-primary">Submit form</button>
       </div>
-      
+
   </div>
 </form>
 </div>
