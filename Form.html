@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fs.css">
+    <title>FORM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet"> 
+
+    <script >
+        function welcome()
+        {
+            alert("Successfully loaded !");
+        }
+        function goodbye()
+        {
+            alert("Goodbye user !");
+        }
+        function uppercas() 
+        {
+            var x = document.getElementById("regno");
+            x.value = x.value.toUpperCase();
+        }
+        function focusFunction() {
+
+            document.getElementById("fname").style.background = "yellow";
+        }
+        function emailchange(val) 
+        {
+            alert("The input value in email field has changed. The new value is: " + val);
+        }
+        function submitted() 
+        {
+            alert("The form is successfully submitted");
+        }
+        function bigImg(x) 
+        {
+          x.style.height = "200px";
+          x.style.width = "250px";
+        }
+        function normalImg(x) 
+        {
+            x.style.height = "100px";
+            x.style.width = "150px";
+        }
+    </script>  
+</head>
+
+<body onload="welcome()" onunload="goodbye()" >
+    <header>
+        <nav id="header-nav" class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <a href="index.html" >
+                        <h1>Class Activity</h1>
+                    </a>
+                </div>
+
+                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="navbar-nav mr-auto d-lg-none d-md-none">
+                        <li class="nav-item active">
+                            <a class="nav-link text-center" href="#chicken">Chicken</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#beef">Beef</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#sushi">Sushi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+        </nav>
+    </header>
+
+    <div id="main-content" class="container">
+        <h2 id="page-title" class="text-center">Form</h2>
+        <div id="main-text">
+          <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" >
+            <form action="" onsubmit="submitted()">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">
+                        Name
+                    </label>
+                    <div class="form-group row col-sm-10 ">
+                        <div class="col-sm-6 required">
+                            <input type="text" class="form-control" id="fname" onfocus="focusFunction()"placeholder="First name"  required>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                        *Important fields when in focus get highlighted.
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Reg No.</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" onblur="uppercas()" id="regno" placeholder="Regestration No." required>
+                        *The function will change the input to uppercase.
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="inputEmail4" class="col-md-2 col-form-label">Email</label>
+                  <div class="col-sm-10 required">
+                      <input type="email" class="form-control" value="abs@xyz.com"onchange="emailchange(this.value)" id="inputEmail4" placeholder="Email">
+                  </div>
+              </div>
+              <div class="form-group row">
+                  <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                  <div class="col-10">
+                    <input class="form-control" type="date" value="22-12-2016" id="date-input">
+                </div>
+            </div>
+                <!-- <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                    </div>
+                </div> -->
+                <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Branch</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">CSE</label>
+                      </div>
+                      <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">Cse Cyber</label>
+                      </div>
+                      <div class="form-check disabled">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                          <label class="form-check-label" for="gridRadios3">CSE Gaming</label>
+                      </div>
+                  </div>
+              </div>
+          </fieldset>
+          <div class="form-group row">
+            <!-- <div class="col-sm-2">Prior knowlegde of</div>
+             -->      <label for="smFormGroup" class="col-sm-2 col-form-label col-form-label-sm">Prior knowlegde of</label>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <label class="form-check-label" for="gridCheck1">HTML</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck2">
+                <label class="form-check-label" for="gridCheck2">CSS</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck3">
+                <label class="form-check-label" for="gridCheck3">JavaScript</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck4">
+                <label class="form-check-label" for="gridCheck4">PHP</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6" id="buttons">
+          <button type="reset" class="btn btn-primary" id="reset">Reset</button>
+      </div>
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-primary">Submit form</button>
+      </div>
+      
+  </div>
+</form>
+</div>
+</div>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
