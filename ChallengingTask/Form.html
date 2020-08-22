@@ -17,22 +17,44 @@
         {
             document.getElementById('date-input').value = new Date().toISOString().substring(0, 10);
         }
-        /*function goodbye()
-        {
-            alert("Goodbye user !");
-        }*/
-        /*function uppercas()
+        
+      function uppercas()
         {
             var x = document.getElementById("regno");
             x.value = x.value.toUpperCase();
-        }*/
-        // function focusFunction() {
-
-        //     document.getElementById("fname").style.background = "yellow";
-        // }
+        }
+       
         function emailchange(val)
         {
             alert("The input value in email field has changed. The new value is: " + val);
+        }
+        var branch;
+        function setVal(y) {
+            branch=y;
+            localStorage.setItem("rad"+".", branch);
+        }
+        function passVal() {
+            var fname1 = document.getElementById("fname").value;
+            localStorage.setItem("fname", fname1);
+            var lname1 = document.getElementById("lname").value;
+            localStorage.setItem("lname", lname1);
+            var regno1 = document.getElementById("regno").value;
+            localStorage.setItem("regno", regno1);
+            var email1 = document.getElementById("inputEmail4").value;
+            localStorage.setItem("email", email1);
+            var date1 = document.getElementById("date-input").value;
+            localStorage.setItem("date", date1);
+            var cheVal = null;
+            var checks = document.getElementsByClassName('checks');
+            var str = '';
+            for ( i = 0; i < 4; i++) {
+              if ( checks[i].checked === true ) {
+                  str += checks[i].value + ", ";
+
+              }
+            }
+            str=str.replace(/, $/," .");
+            localStorage.setItem("check", str);
         }
         function onfoc()
         {
@@ -47,10 +69,10 @@
             window.alert("Suggested password "+pass);
           }
         }
-        function submitted()
+        /*function submitted()
         {
             alert("The form is successfully submitted");
-        }
+        }*/
         function leftempty()
         {
           var fname =document.getElementById("fname");
@@ -98,7 +120,7 @@
     </script>
 </head>
 
-<body onload="welcome()" onunload="goodbye()" >
+<body onload="welcome()" >
     <header>
         <nav id="header-nav" class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
@@ -134,32 +156,32 @@
         <h2 id="page-title" class="text-center">Form</h2>
         <div id="main-text">
           <!-- <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" > -->
-            <form name="form" action="" onsubmit="leftempty()">
+            <form name="form" action="display.html" onsubmit="leftempty()">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">
                         Name
                     </label>
                     <div class="form-group row col-sm-10 ">
                         <div class="col-sm-6 required">
-                            <input type="text" class="form-control" name="fname" id="fname" onfocus="focusFunction()"placeholder="First name"  >
+                            <input type="text" class="form-control" name="fname" id="fname"  placeholder="First name"  >
                         </div>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Last name" ID="lname">
+                            <input type="text" class="form-control" placeholder="Last name" ID="lname" >
                         </div>
-                        *Important fields when in focus get highlighted.
+                        
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Reg No.</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" onblur="uppercas()" id="regno" placeholder="Registration No." required>
+                        <input class="form-control" type="text" onblur="uppercas()"  id="regno" placeholder="Registration No." required>
                         *The function will change the input to uppercase.
                     </div>
                 </div>
                 <div class="form-group row">
                   <label for="inputEmail4" class="col-md-2 col-form-label">Email</label>
                   <div class="col-sm-10 required">
-                      <input type="email" class="form-control" value="abs@xyz.com"onchange="emailchange(this.value)" id="inputEmail4" placeholder="Email">
+                      <input type="email" class="form-control" value="xyz@vitbhopal.ac.in"onchange="emailchange(this.value)" id="inputEmail4" placeholder="Email">
                   </div>
               </div>
               <div class="form-group row">
@@ -179,15 +201,15 @@
                       <legend class="col-form-label col-sm-2 pt-0">Branch</legend>
                       <div class="col-sm-10">
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="CSE" onclick="setVal(this.value);">
                           <label class="form-check-label" for="gridRadios1">CSE</label>
                       </div>
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="CSE Cyber" onclick="setVal(this.value);">
                           <label class="form-check-label" for="gridRadios2">Cse Cyber</label>
                       </div>
                       <div class="form-check disabled">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="CSE Gaming" onclick="setVal(this.value);">
                           <label class="form-check-label" for="gridRadios3">CSE Gaming</label>
                       </div>
                   </div>
@@ -198,19 +220,19 @@
              -->      <label for="smFormGroup" class="col-sm-2 col-form-label col-form-label-sm">Prior knowlegde of</label>
             <div class="col-sm-10">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck1" value="HTML">
                 <label class="form-check-label" for="gridCheck1">HTML</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck2">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck2" value="CSS">
                 <label class="form-check-label" for="gridCheck2">CSS</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck3">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck3" value="JavaScript">
                 <label class="form-check-label" for="gridCheck3">JavaScript</label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck4">
+                <input class="form-check-input checks" type="checkbox" id="gridCheck4" value="PHP">
                 <label class="form-check-label" for="gridCheck4">PHP</label>
             </div>
         </div>
@@ -220,7 +242,7 @@
           <button type="reset" class="btn btn-primary" id="reset">Reset</button>
       </div>
         <div class="col-sm-6">
-          <button type="submit" class="btn btn-primary">Submit form</button>
+          <button type="submit" class="btn btn-primary" onclick="passVal();">Submit form</button>
       </div>
 
   </div>
