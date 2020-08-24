@@ -17,13 +17,13 @@
         {
             document.getElementById('date-input').value = new Date().toISOString().substring(0, 10);
         }
-        
+
       function uppercas()
         {
             var x = document.getElementById("regno");
             x.value = x.value.toUpperCase();
         }
-       
+
         function emailchange(val)
         {
             alert("The input value in email field has changed. The new value is: " + val);
@@ -156,6 +156,8 @@
         <h2 id="page-title" class="text-center">Form</h2>
         <div id="main-text">
           <!-- <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0"class="center" src="https://findlogovector.com/wp-content/uploads/2019/03/vit-bhopal-logo-vector.png" alt="Logo" width="250" height="200" > -->
+          <br>
+          <br>
             <form name="form" action="display.html" onsubmit="leftempty()">
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">
@@ -168,7 +170,7 @@
                         <div class="col-sm-6">
                             <input type="text" class="form-control" placeholder="Last name" ID="lname" >
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="form-group row">
@@ -242,7 +244,7 @@
           <button type="reset" class="btn btn-primary" id="reset">Reset</button>
       </div>
         <div class="col-sm-6">
-          <button type="submit" class="btn btn-primary" onclick="passVal();">Submit form</button>
+          <button type="submit" class="btn btn-primary" onclick="passVal();" id="sub">Submit form</button>
       </div>
 
   </div>
