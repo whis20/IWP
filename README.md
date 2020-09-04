@@ -33,4 +33,4 @@ This repository contains my solutions to the assignments of IWP course.
     b)JQuery Methods
 * Deadline: September 4th , 06:00 PM IST
 * [Solution](https://whis20.github.io/IWP/ChallengingTask/Form.html)
-* [Solution](https://whis20.github.io/IWP/Assignment IV/index-extra.html)
+* [Solution](https://whis20.github.io/IWP/AssignmentIV/index-extra.html)
