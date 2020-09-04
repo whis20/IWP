@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles-extra.css">
+    <title>Module 3 Assignment_Extra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@600&display=swap" rel="stylesheet">  
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+        </script> 
+    <script>
+        $(document).ready(function()
+        {
+            //for chicken
+            $("#chicsho").click(function()
+            {
+                $("#chicken").fadeIn("slow");
+            });
+            $("#chichid").click(function()
+            {
+                $("#chicken").fadeOut("slow");
+            });
+            //for beef
+            $("#beefsho").click(function()
+            {
+                $("#beef").fadeIn("slow");
+            });
+            $("#beefhid").click(function()
+            {
+                $("#beef").fadeOut("slow");
+            });
+            //for shushi
+            $("#shusho").click(function()
+            {
+                $("#shushi").fadeIn("slow");
+            });
+            $("#shuhid").click(function()
+            {
+                $("#shushi").fadeOut("slow");
+            });
+            $(".bgdcol").click(function(){
+              $("body").css({"background-color": "#80bad1"});
+              $("#chicken-title, #beef-title, #sushi-title,#barbecue-title").css({"background-color":"#ececd1"});
+            });
+            
+
+        $(".add_details").click(function(){
+    
+   
+        $("#shuid").append('<div class="container-fluid"><div class="row"><div id="barid"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="barbecue-title"><section><h3 class="text-center">Barbecue</h3><p id="barbecue">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimatasanctus est Lorem ipsum dolor sit amet. </p><p>(The Barbecue section) <a href="#page-title">Back to Top</a></p></section></div><button class="remove-btn" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i>X</button></div></div></div>');
+        });
+
+        $("body").on("click",".remove-btn",function(e){
+            $(this).parents('#barid').remove();
+            });
+        });
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav id="header-nav" class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <a href="index.html" >
+                        <h1>Food, LLC</h1>
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="navbar-nav mr-auto d-lg-none d-md-none ">
+                        <li class="nav-item active">
+                            <a class="nav-link text-center" href="#chicken-title">Chicken</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#beef-title">Beef</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-center" href="#sushi-title">Sushi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main-content" class="container-fluid">
+        <h2 id="page-title" class="text-center">Our Menu</h2>
+        <div id="home-tiles" class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div id="chicken-title">
+                    <section >
+                        <h3 class="text-center">Chicken</h3>
+                            <p style="display:none; " id="chicken" >
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. 
+                        <p>
+                            (The Chicken section) <a href="#page-title">TOP</a>
+                        </p>
+                        </p>
+                    </section>
+                     <button id="chicsho" >SHOW</button>
+                     <button id="chichid" >HIDE</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12" id="beefdiv">
+                <div id="beef-title">
+                    <section>
+                        <h3 class="text-center">Beef</h3>
+                        <p style="display:none; " id="beef">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        </p>
+                        <p>
+                            (The Beef section) <a href="#page-title">Back to Top</a>
+                        </p>
+                    </section>
+                    <button id="beefsho" >SHOW</button>
+                     <button id="beefhid" >HIDE</button>
+                </div>
+            </div>
+            <!-- <div class="clearfix visible-md-block"></div> -->
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" id="shuid">
+                <div id="sushi-title">
+                    <section>
+                        <h3 class="text-center">Sushi</h3>
+                        <p style="display:none; " id="shushi">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                            sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+                            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit
+                            in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                        </p>
+                        <p>
+                            (The Sushi section) <a href="#page-title">Back to Top</a>
+                        </p>
+                    </section>
+                    <button id="shusho" >SHOW</button>
+                     <button id="shuhid" >HIDE</button>
+                </div>
+            </div>
+            <!-- <div class="clearfix visible-lg-block"></div> -->
+            
+        </div>
+        <div class="form-group text-center">
+                <input value="Add Barbecue in Menu" class="add_details btn btn-primary" autocomplete="false" type="button">
+                <button class=" bgdcol btn btn-primary">Interchange Bgd color</button>
+            </div>
+    </div>
+    
+<!--     <div class="clearfix visible-lg-block"></div>
+ -->
+    <!-- <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/bootstrap.min.js"></script> -->
+
+</body>
+
+</html>
