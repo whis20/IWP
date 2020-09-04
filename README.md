@@ -1,6 +1,6 @@
 # IWP
 
-This repository contains my solutions to the assignments of IWP course.
+This repository contains my solutions to the assignments of IWP course for my uni.
 
 ## Assignments
 
